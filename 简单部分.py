@@ -54,6 +54,46 @@
 """
 
 
+# 不能提前预测移除情况，只有溢出才会判断溢出了，返回0
+# class Solution:
+#     def reverse(self, num):
+#         a_num = abs(num)
+#         a_num = str(a_num)[::-1]
+#         if "-" in str(num):
+#             num = "-" + a_num
+#         else:
+#             num = a_num
+#
+#         if int(num) > 2**31-1 or int(num) < -2**31:
+#             num = 0
+#
+#         return num
+#
+#
+# solution = Solution()
+# res = solution.reverse(num=2**29)
+# print(res)
+
+
+# 提前预测将要溢出，可以把所有的数除以10
+# class Solution:
+#     def reverse(self, num):
+#         a_num = abs(num) // 10
+#         remainder = abs(num) % 10
+#         a_num = str(remainder) + str(int(str(a_num)[::-1])/10)
+#         if "-" in str(num):
+#             a_num = "-" + str(a_num)
+#         if float(a_num) > (2**31-1)/10 or float(a_num) < (-2**31)/10:
+#             num = 0
+#         else:
+#             num = int(str(a_num).replace(".", ""))
+#         return num
+#
+#
+# solution = Solution()
+# res = solution.reverse(num=2**29)
+# print(res)
+
 
 
 
