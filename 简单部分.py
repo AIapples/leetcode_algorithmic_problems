@@ -94,6 +94,58 @@
 # res = solution.reverse(num=2**29)
 # print(res)
 
+'''
+判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+示例 1:
+输入: 121
+输出: true
+示例 2:
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+示例 3:
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
+进阶:
+你能不将整数转为字符串来解决这个问题吗？
+'''
+
+# 通过转换成字符串的方式
+# def isPalindrome(num):
+#     reverse_num = str(num)[::-1]
+#     if str(num) == reverse_num:
+#         return True
+#     return False
+#
+# num = 10
+# print(isPalindrome(num))
+
+# 通过数字直接判断
+# def isPalindrome(num):
+#     # 小于0的肯定不是回文数
+#     if num < 0:
+#         return False
+#     # 计算当前数子有几位
+#     count = 0
+#     num_ = num
+#     while num_ >= 1:
+#         num_ = num_ / 10
+#         count += 1
+#     num_l = num
+#     while count >= 1:
+#         count -= 1
+#         num_left = num_l // 10 ** count
+#         num_right = num % 10
+#         num = num // 10
+#         num_l = num_l - num_left * 10 ** count
+#         if num_left != num_right:
+#             return False
+#     return True
+#
+# num = 1567651
+# print(isPalindrome(num))
+
 
 
 
