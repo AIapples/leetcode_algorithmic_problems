@@ -216,8 +216,41 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 解释: 输入不存在公共前缀。
 说明:
 所有输入只包含小写字母 a-z 。
-
 """
+# 暴力解法
+# def common_prefix(num):
+#     # 先计算最短的字符串长度
+#     min_len = min([len(i) for i in num])
+#     c_pre = ''
+#     for i_index in range(min_len):
+#         for j in num:
+#             if len(c_pre) != i_index + 1 and c_pre != j[i_index]:
+#                 c_pre = c_pre + j[i_index]
+#             if c_pre and j[i_index] != c_pre[i_index]:
+#                 if i_index == 0:
+#                     return "输入不存在公共前缀"
+#                 return c_pre.replace(c_pre[i_index], "")
+#     return c_pre
+#
+# res = common_prefix(num = ["flower","flow","flowht"])
+# print(res)
+
+
+# 用切片的方式
+# def common_prefix(num):
+#     num = sorted(num)
+#     lenght = len(num[0])
+#     pre = ''
+#     for i_index in range(lenght):
+#         pre = num[0][:i_index + 1]
+#         for j in num:
+#             if j[:i_index+1] != pre:
+#                 return j[:i_index]
+#     return pre
+#
+# res = common_prefix(num = ["flower","flower","flowht"])
+# print(res)
+
 
 
 
