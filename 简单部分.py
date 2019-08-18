@@ -273,6 +273,12 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 输入: "{[]}"
 输出: true
 """
+def is_brackets(value):
+    dic = {"(": ")", "[": "]", "{": "}"}
+    for i in range(len(value)-1):
+        if value(i) not in dic:
+            return False
+
 
 
 
